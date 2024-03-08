@@ -39,7 +39,7 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/telephony_system_ext.mk)
 
 ## Device identifier. This must come after all inclusions
 PRODUCT_DEVICE := X657B
-PRODUCT_NAME := lineage_X657B
+PRODUCT_NAME := octavi_X657B
 PRODUCT_BRAND := Infinix
 PRODUCT_MODEL := Infinix SMART 5
 PRODUCT_MANUFACTURER := Infinix
