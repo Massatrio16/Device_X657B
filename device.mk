@@ -7,16 +7,14 @@ DEVICE_PATH := device/infinix/X657B
 # Include GSI keys
 $(call inherit-product, $(SRC_TARGET_DIR)/product/gsi_keys.mk)
 
-# Inherit from our custom product configuration
-   $(call inherit-product, vendor/octavi/config/common_full_phone.mk)
-$(call inherit-product, vendor/octavi/config/common.mk)
-
-# fastbootd
+# Fastbootd
 PRODUCT_PACKAGES += \
-    PRODUCT_PACKAGES += \
     fastbootd \
     android.hardware.fastboot@1.0-impl-mtk.so
-    
+
+PRODUCT_TARGET_VNDK_VERSION := 30
+PRODUCT_SHIPPING_API_LEVEL := 30
+
 PRODUCT_PACKAGES += \
     android.hardware.boot@1.1-impl \
     android.hardware.boot@1.1-impl-recovery
@@ -25,6 +23,7 @@ PRODUCT_PACKAGES += \
     android.hardware.health@2.1-impl \
     android.hardware.health@2.1-service \
     libhealthd.$(PRODUCT_PLATFORM)
+    
     
     # IMS
 $(call inherit-product, vendor/mediatek/ims/mtk-ims.mk)
@@ -42,6 +41,9 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     DT2W-Service-X657B
     
+    PRODUCT_PACKAGES += \
+    charger
+    
 # Overlays
 PRODUCT_ENFORCE_RRO_TARGETS := *
 
@@ -56,10 +58,6 @@ PRODUCT_COPY_FILES += \
 # Camera
 PRODUCT_PACKAGES += \
     GoogleCameraGo
-    
-    #Charger
-    PRODUCT_PACKAGES += \
-    charger
 
 # Bluetooth
 PRODUCT_PACKAGES += \
@@ -72,14 +70,20 @@ PRODUCT_SOONG_NAMESPACES += $(DEVICE_PATH)
 DEVICE_PACKAGE_OVERLAYS += \
     $(DEVICE_PATH)/overlay
 
+# Dynamic Partitions 
 
 # Partitions
 PRODUCT_BUILD_SUPER_PARTITION := false
 PRODUCT_USE_DYNAMIC_PARTITIONS := true
+WITH_GAPPS=true
+TARGET_FACE_UNLOCK_SUPPORTED := true
+
+
+OCTAVI_DEVICE_MAINTAINER := Massatrio16
+
 
 # Product characteristics
 PRODUCT_CHARACTERISTICS := default
-WITH_GAPPS=true
 
 # Rootdir
 PRODUCT_PACKAGES += \
@@ -115,9 +119,4 @@ PRODUCT_COPY_FILES += \
 PRODUCT_COPY_FILES += \
     $(DEVICE_PATH)/configs/keylayout/uinput-fpc.kl:$(TARGET_COPY_OUT_SYSTEM)/usr/keylayout/uinput-fpc.kl \
     $(DEVICE_PATH)/configs/keylayout/uinput-goodix.kl:$(TARGET_COPY_OUT_SYSTEM)/usr/keylayout/uinput-goodix.kl
-    
-    
-    TARGET_FACE_UNLOCK_SUPPORTED := true
-    OCTAVI_DEVICE_MAINTAINER := Massatrio16
-    
     

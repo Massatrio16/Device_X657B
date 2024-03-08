@@ -624,8 +624,8 @@
 
     <!-- Controls whether system buttons use all caps for text -->
     <bool name="config_buttonTextAllCaps">false</bool>
-    
-        <!-- Face unlock -->
+
+    <!-- Face unlock -->
     <bool name="config_faceAuthOnlyOnSecurityView">true</bool>
 
 </resources>

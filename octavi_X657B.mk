@@ -25,6 +25,12 @@ $(call inherit-product, device/infinix/X657B/device.mk)
 $(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
 $(call inherit-product, $(SRC_TARGET_DIR)/product/aosp_base.mk)
 
+   # Inherit some common Octavi stuff.
+   $(call inherit-product, vendor/octavi/config/common_full_phone.mk)
+   
+      # Inherit some common Octavi stuff.   
+   $(call inherit-product, vendor/octavi/config/common.mk)
+
 #
 # All components inherited here go to system_ext image
 #
