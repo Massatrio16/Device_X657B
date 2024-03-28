@@ -146,8 +146,6 @@ BOARD_PLAT_PRIVATE_SEPOLICY_DIR := $(DEVICE_PATH)/sepolicy/private
 # Releasetools
 TARGET_RELEASETOOLS_EXTENSIONS := $(DEVICE_PATH)
 
-# Dual sim solution in virgo
-CONFIG_EAP_PROXY_DUAL_SIM := true
 
 # Build Broken
 BUILD_BROKEN_DUP_RULES := true
@@ -172,10 +170,6 @@ BOARD_CHARGER_DISABLE_INIT_BLANK := true
 BOARD_CHARGER_ENABLE_SUSPEND := true
 BOARD_CHARGER_SHOW_PERCENTAGE := true
 BACKLIGHT_PATH := /sys/class/leds/lcd-backlight/brightness
-BOARD_RED_LED_PATH := "/sys/class/leds/red"
-BOARD_GREEN_LED_PATH := "/sys/class/leds/green"
-RED_LED_PATH := /sys/class/leds/red/brightness
-GREEN_LED_PATH := /sys/class/leds/green/brightness
 CHARGING_ENABLED_PATH := /sys/class/power_supply/battery/charging_enabled
 BACKLIGHT_PATH  := /sys/class/leds/lcd-backlight/brightness
 HEALTHD_BACKLIGHT_LEVEL := 30
@@ -186,6 +180,8 @@ USE_OPENGL_RENDERER := true
 
 #dual sim
 SIM_COUNT := 2
+CONFIG_EAP_PROXY_DUAL_SIM := true
+
 
 # Inherit the proprietary files
 include vendor/infinix/X657B/BoardConfigVendor.mk
