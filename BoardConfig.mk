@@ -184,6 +184,8 @@ HEALTHD_BACKLIGHT_LEVEL := 30
 #Opsional
 USE_OPENGL_RENDERER := true
 
+#dual sim
+SIM_COUNT := 2
 
 # Inherit the proprietary files
 include vendor/infinix/X657B/BoardConfigVendor.mk
