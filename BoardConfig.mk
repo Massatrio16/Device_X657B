@@ -26,7 +26,9 @@ BOARD_USES_MTK_AUDIO := true
 BOARD_CHARGER_ENABLE_SUSPEND := true
 BACKLIGHT_PATH := /sys/class/leds/lcd-backlight/brightness
 BOARD_CHARGER_SHOW_PERCENTAGE := true
-
+DEFAULT_BRIGHTNESS := 1200
+MAX_BRIGHTNESS := 2047
+BRIGHTNESS_PATH := "/sys/class/leds/lcd-backlight/brightness"
 
 #Apex
 DEXPREOPT_GENERATE_APEX_IMAGE := true
