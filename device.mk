@@ -86,13 +86,13 @@ OCTAVI_DEVICE_MAINTAINER := Massatrio16
 PRODUCT_CHARACTERISTICS := default
 
 # Rootdir
-PRODUCT_PACKAGES += \
-    install-recovery.sh \
+#PRODUCT_PACKAGES += \
+   # install-recovery.sh \
 
 PRODUCT_PACKAGES += \
 fstab.mt6761 \
     init.mt6761.rc \
-    init.recovery.mt6761.rc 
+    init.recovery.mt6761.rc
 
 PRODUCT_COPY_FILES += \
     $(DEVICE_PATH)/rootdir/etc/fstab.mt6761:$(TARGET_COPY_OUT_RAMDISK)/fstab.mt6761
